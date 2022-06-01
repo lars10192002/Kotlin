@@ -12,6 +12,7 @@ import com.example.core.utils.CacheUtils;
 import com.example.core.utils.Utils;
 import com.example.lesson.LessonActivity;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,8 +34,8 @@ public class MainActivity extends AppCompatActivity
         et_password = findViewById(R.id.et_password);
         et_code = findViewById(R.id.et_code);
 
-        et_username.setText(CacheUtils.get(usernameKey));
-        et_password.setText(CacheUtils.get(passwordKey));
+        if (et_username!=null) et_username.setText(CacheUtils.get(usernameKey));
+        if (et_password!=null) et_password.setText(CacheUtils.get(passwordKey));
 
         final Button btn_login = findViewById(R.id.btn_login);
         final CodeView img_code = findViewById(R.id.code_view);
